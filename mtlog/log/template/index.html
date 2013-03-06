@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block log_contents %}
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span5"> <!-- sidebar -->
+      <a class="btn btn-primary btn-large mt-logit">
+	Log it!
+      </a>
+    </div>
+      
+    <div class="span7 offset3 mt-content"> <!-- contents -->
+      {% if log_page %}
+      {% for logs in log_page %}
+      <div class="row-fluid">
+	<h3> {{ logs.log_title }} </h3>
+        <div class="span2">
+	  {{ logs.author }}	  
+        </div>
+        <div class="span2 mt-date">
+	  {{ logs.lastmodified_date }}
+        </div>	
+      </div>
+      <div class="lead">
+	{{ logs.contents }}      
+      </div>
+      {% endfor %}
+      
+      {% else %}
+      
+      <div class="lead">
+	No logs available.
+      </div>
+      {% endif %}
+    </div>
+    
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
