@@ -15,5 +15,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 #    url(r'^$', direct_to_template, {'template': 'log/templates/index.html'}, "home")
-    url(r'^$', 'log.views.home_page')
+    url(r'^$', 'log.views.home_page'),
+    url(r'^log_form/', 'log.views.log_form_page'),
+    url(r'^about_page/', 'log.views.about_page')
 )

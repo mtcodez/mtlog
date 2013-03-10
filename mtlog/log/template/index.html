@@ -3,26 +3,27 @@
 {% block log_contents %}
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span5"> <!-- sidebar -->
-      <a class="btn btn-primary btn-large mt-logit">
-	Log it!
+    <div class="span5"> <!-- sidebar -->    
+      <a href="/log_form">
+	yes
       </a>
     </div>
+    
       
     <div class="span7 offset3 mt-content"> <!-- contents -->
-      {% if log_page %}
-      {% for logs in log_page %}
+      {% if log_pages %}
+      {% for log_page in log_pages %}
       <div class="row-fluid">
-	<h3> {{ logs.log_title }} </h3>
+	<h3> {{ log_page.log_title }} </h3>
         <div class="span2">
-	  {{ logs.author }}	  
+	  {{ log_page.author }}	  
         </div>
         <div class="span2 mt-date">
-	  {{ logs.lastmodified_date }}
+	  {{ log_page.lastmodified_date }}
         </div>	
       </div>
       <div class="lead">
-	{{ logs.contents }}      
+	{{ log_page.contents }}      
       </div>
       {% endfor %}
       
